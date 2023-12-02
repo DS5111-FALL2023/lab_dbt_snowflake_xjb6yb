@@ -33,6 +33,10 @@ run_new:
 build:
 	. env/bin/activate; cd ds5111_lab_dbt_snow; \
 		dbt build 
+.PHONY: test
+test:
+	. env/bin/activate; cd ds5111_lab_dbt_snow; \
+		dbt test 
 
 .PHONY: clean
 clean:
