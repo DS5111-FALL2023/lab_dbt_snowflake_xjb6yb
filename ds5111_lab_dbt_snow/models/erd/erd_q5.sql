@@ -9,11 +9,11 @@
 
 {{ config(materialized='view') }}
 
-select CLASS_CODE
+select DISTINCT CLASS_CODE
 from course_info
 LEFT JOIN learning_outcomes
 ON course_info.CLASS_CODE = learning_outcomes.COURSE_CODE
-WHERE COUNT(learning_outcomes.LEARNING_OUTCOME) = 0
+WHERE learning_outcomes.LEARNING_OUTCOME IS null
 
 
 /*
