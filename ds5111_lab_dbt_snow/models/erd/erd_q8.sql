@@ -9,8 +9,10 @@
 
 {{ config(materialized='view') }}
 
-select *
-from course_info
+select DISTINCT Instructor
+from terms_with_courses
+WHERE Term_Name = 'Fall 2021'
+ORDER BY Instructor
 
 /*
     Uncomment the line below to remove records with null `id` values
