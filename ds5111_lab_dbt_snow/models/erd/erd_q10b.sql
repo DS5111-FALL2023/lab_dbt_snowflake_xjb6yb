@@ -12,7 +12,7 @@
 select class_code, Term_Name, Instructor
 from terms_with_courses
 WHERE Instructor NOT IN ('Raf Alvarado', 'Teague Henry')
-GROUP BY class_code, Term_Name
+GROUP BY class_code, Term_Name, Instructor
 HAVING COUNT(Instructor) > 1
 
 /*

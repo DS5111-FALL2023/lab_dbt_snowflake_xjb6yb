@@ -9,10 +9,10 @@
 
 {{ config(materialized='view') }}
 
-select LO.COURSE_CODE, CI.course_name, LO.LEARNING_OUTCOME
+select LO.class_code, CI.course_name, LO.LEARNING_OUTCOME
 from course_info CI
 LEFT JOIN learning_outcomes LO
-ON CI.COURSE_CODE, LO.COURSE_CODE
+ON CI.class_code =  LO.COURSE_CODE
 WHERE LO.LEARNING_OUTCOME LIKE '%SQL%' 
 OR LO.LEARNING_OUTCOME LIKE 'SQL%' 
 OR LO.LEARNING_OUTCOME LIKE '%SQL' 
