@@ -9,9 +9,9 @@
 
 {{ config(materialized='view') }}
 
-select COURSE_CODE, Term_Name
+select class_code, Term_Name
 from terms_with_courses
-GROUP BY COURSE_CODE, Term_Name
+GROUP BY class_code, Term_Name
 HAVING COUNT(Instructor) > 1
 
 /*

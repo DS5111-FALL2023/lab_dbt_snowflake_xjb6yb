@@ -9,7 +9,7 @@
 
 {{ config(materialized='view') }}
 
-select COURSE_CODE, count(*)
+select COURSE_CODE, count(*) as N
 from learning_outcomes
 group by COURSE_CODE
 

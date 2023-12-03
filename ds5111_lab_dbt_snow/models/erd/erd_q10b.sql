@@ -9,10 +9,10 @@
 
 {{ config(materialized='view') }}
 
-select COURSE_CODE, Term_Name, Instructor
+select class_code, Term_Name, Instructor
 from terms_with_courses
 WHERE Instructor NOT IN ('Raf Alvarado', 'Teague Henry')
-GROUP BY COURSE_CODE, Term_Name
+GROUP BY class_code, Term_Name
 HAVING COUNT(Instructor) > 1
 
 /*

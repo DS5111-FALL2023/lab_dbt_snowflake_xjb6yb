@@ -9,10 +9,10 @@
 
 {{ config(materialized='view') }}
 
-select COURSE_CODE
+select class_code
 from course_info CI
 LEFT JOIN learning_outcomes LO
-ON CI.COURSE_CODE, LO.COURSE_CODE
+ON CI.class_code = LO.COURSE_CODE
 HAVING COUNT(LO.LEARNING_OUTCOME) = 0
 
 

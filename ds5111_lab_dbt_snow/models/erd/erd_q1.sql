@@ -9,7 +9,7 @@
 
 {{ config(materialized='view') }}
 
-select course_code, course_name
+select class_code, course_name
 from course_info
 WHERE Active = TRUE
 
