@@ -13,7 +13,7 @@ select class_code
 from course_info
 LEFT JOIN learning_outcomes
 ON course_info.class_code = learning_outcomes.COURSE_CODE
-HAVING COUNT(LO.LEARNING_OUTCOME) = 0
+HAVING COUNT(learning_outcomes.LEARNING_OUTCOME) = 0
 
 
 /*

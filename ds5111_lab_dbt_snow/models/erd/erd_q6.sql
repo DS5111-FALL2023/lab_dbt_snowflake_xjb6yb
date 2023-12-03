@@ -10,12 +10,12 @@
 {{ config(materialized='view') }}
 
 select LO.class_code, CI.course_name, LO.LEARNING_OUTCOME
-from course_info CI
-LEFT JOIN learning_outcomes LO
-ON CI.class_code =  LO.COURSE_CODE
-WHERE LO.LEARNING_OUTCOME LIKE '%SQL%' 
-OR LO.LEARNING_OUTCOME LIKE 'SQL%' 
-OR LO.LEARNING_OUTCOME LIKE '%SQL' 
+from course_info
+LEFT JOIN learning_outcomes
+ON course_info.class_code =  learning_outcomes.COURSE_CODE
+WHERE learning_outcomes.LEARNING_OUTCOME LIKE '%SQL%' 
+OR learning_outcomes.LEARNING_OUTCOME LIKE 'SQL%' 
+OR learning_outcomes.LEARNING_OUTCOME LIKE '%SQL' 
 
 
 /*
