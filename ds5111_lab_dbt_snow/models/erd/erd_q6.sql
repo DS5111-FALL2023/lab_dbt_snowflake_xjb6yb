@@ -9,7 +9,7 @@
 
 {{ config(materialized='view') }}
 
-select learning_outcomes.class_code, course_info.course_name, learning_outcomes.LEARNING_OUTCOME
+select learning_outcomes.COURSE_CODE, course_info.course_name, learning_outcomes.LEARNING_OUTCOME
 from course_info
 LEFT JOIN learning_outcomes
 ON course_info.class_code =  learning_outcomes.COURSE_CODE
